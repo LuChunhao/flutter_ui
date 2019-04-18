@@ -52,15 +52,22 @@ class MyApp extends StatelessWidget {
         // 注册界面
         HomeScreen.HOME: (BuildContext context) => new HomeScreen(),
         TabLayout.TABLAYOUT: (BuildContext context) => new TabLayout(),
-        FadeAppTest.FADEAPP: (BuildContext context) => new FadeAppTest(title: 'Fade Demo'),
+        FadeAppTest.FADEAPP: (BuildContext context) =>
+        new FadeAppTest(title: 'Fade Demo'),
         HttpGet.httpGet: (BuildContext context) => new HttpGet(),
-        ListViewUsing.listViewUsing: (BuildContext context) => new ListViewUsing(),
+        ListViewUsing.listViewUsing: (
+            BuildContext context) => new ListViewUsing(),
         SnackBarView.snackBarView: (BuildContext context) => new SnackBarView(),
-        GridLayoutPage.gridLayoutPage: (BuildContext context) => new GridLayoutPage(),
-        DropdownButtonPage.dropdownButton: (BuildContext context) => new DropdownButtonPage(),
-        InfiniteListPage.infiniteListPage: (BuildContext context) => new InfiniteListPage(),
-        LoginPage.loginPage: (BuildContext context) => new LoginPage(),
-        SharedPreferencesPage.sharedPreferencesPage: (BuildContext context) => new SharedPreferencesPage(),
+        GridLayoutPage.gridLayoutPage: (
+            BuildContext context) => new GridLayoutPage(),
+        DropdownButtonPage.dropdownButton: (
+            BuildContext context) => new DropdownButtonPage(),
+        InfiniteListPage.infiniteListPage: (
+            BuildContext context) => new InfiniteListPage(),
+//        LoginPage.loginPage: (BuildContext context) => new LoginPage(),
+        SharedPreferencesPage.sharedPreferencesPage: (
+            BuildContext context) => new SharedPreferencesPage(),
+
       },
     );
   }
@@ -86,11 +93,7 @@ class MyAppState extends State<MyAppSample> {
       body: new ListView(
         children: <Widget>[
 //        new RaisedButton.icon(onPressed: (){}, icon: new Icon(Icons.access_alarm), label: new Text("test"))
-          new RaisedButton(
-            onPressed: () =>
-                Navigator.of(context).pushNamed(TabLayout.TABLAYOUT),
-            child: new Text("tabLayout + viewpage"),
-          ),
+          listItemButton(context, TabLayout.TABLAYOUT, "tabLayout + viewpage"),
           new FloatingActionButton(
             onPressed: () {
               Navigator.of(context).pushNamed(HomeScreen.HOME);
@@ -103,45 +106,29 @@ class MyAppState extends State<MyAppSample> {
             child: new Text('Fade App'),
             padding: new EdgeInsets.only(left: 10.0, right: 10.0),
           ),
-          new RaisedButton(
-            onPressed: () => Navigator.of(context).pushNamed(HttpGet.httpGet),
-            child: new Text("Http Get"),
-          ),
-          new RaisedButton(
-            onPressed: () =>
-                Navigator.of(context).pushNamed(ListViewUsing.listViewUsing),
-            child: new Text("ListViewUsing"),
-          ),
-          new RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(SnackBarView.snackBarView);
-            },
-            child: new Text("showSnackBar"),
-          ),
-          new RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(GridLayoutPage.gridLayoutPage);
-            },
-            child: new Text("Grid View"),
-          ),
-          new RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(DropdownButtonPage.dropdownButton);
-            },
-            child: new Text("DropdownButton"),
-          ),
-          new Image.network("http://shp.qpic.cn/ishow/2735041709/1555463886_-695593207_22439_sProdImgNo_7.jpg/0"),
-          new Image.network("http://shp.qpic.cn/ishow/2735041709/1555464892_1186005513_29965_sProdImgNo_7.jpg/0"),
-          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(InfiniteListPage.infiniteListPage),
-            child: new Text("InfiniteList"),),
-          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(LoginPage.loginPage),
-            child: new Text("谷歌登录"),),
-          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(SharedPreferencesPage.sharedPreferencesPage),
-            child: new Text("SharedPreferences"),)
+          listItemButton(context, HttpGet.httpGet, "Http Get"),
+          listItemButton(context, ListViewUsing.listViewUsing, "ListViewUsing"),
+          listItemButton(context, SnackBarView.snackBarView, "showSnackBar"),
+          listItemButton(context, GridLayoutPage.gridLayoutPage, "Grid View"),
+          listItemButton(context, DropdownButtonPage.dropdownButton, "DropdownButton"),
+          new Image.network(
+              "http://shp.qpic.cn/ishow/2735041709/1555463886_-695593207_22439_sProdImgNo_7.jpg/0"),
+          new Image.network(
+              "http://shp.qpic.cn/ishow/2735041709/1555464892_1186005513_29965_sProdImgNo_7.jpg/0"),
+          listItemButton(context, InfiniteListPage.infiniteListPage, "InfiniteList"),
+          listItemButton(context, SharedPreferencesPage.sharedPreferencesPage, "SharedPreferences"),
+//          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(LoginPage.loginPage),
+//            child: new Text("谷歌登录"),),
         ],
       ),
     );
   }
+}
+
+Widget listItemButton(context, name, label) {
+  return new RaisedButton(
+      onPressed: () => Navigator.of(context).pushNamed(name),
+      child: new Text(label));
 }
 
 void showSnackBar(context) {

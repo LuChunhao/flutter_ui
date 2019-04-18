@@ -2,6 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui/test/drawer/account.dart';
 import 'package:flutter_ui/test/drawer/settings.dart';
 
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new MaterialApp(
+      routes: <String, WidgetBuilder>{
+        SettingsScreen.routeName: (BuildContext context) =>
+            new SettingsScreen(),
+        AccountScreen.routeName: (BuildContext context) => new AccountScreen(),
+      },
+    );
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   static const String HOME = "/home";
 
@@ -12,9 +26,13 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   Drawer getNavDrawer(BuildContext context) {
     var headerChild = new DrawerHeader(
-      child: new Text("Header", style: TextStyle(color: Colors.white, fontSize: 18),),
+      child: new Text(
+        "Header",
+        style: TextStyle(color: Colors.white, fontSize: 18),
+      ),
       decoration: BoxDecoration(
-          image: DecorationImage(image: new AssetImage("images/luna.jpg"), fit: BoxFit.cover)),
+          image: DecorationImage(
+              image: new AssetImage("images/luna.jpg"), fit: BoxFit.cover)),
     );
     var aboutChild = new AboutListTile(
         child: new Text("About"),
