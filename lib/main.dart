@@ -7,6 +7,7 @@ import 'package:flutter_ui/test/pages/DropdownButtonPage.dart';
 import 'package:flutter_ui/test/pages/GridLayoutPage.dart';
 import 'package:flutter_ui/test/pages/InfiniteListPage.dart';
 import 'package:flutter_ui/test/pages/LoginPage.dart';
+import 'package:flutter_ui/test/pages/QRScannerPage.dart';
 import 'package:flutter_ui/test/pages/SharedPreferencesPage.dart';
 import 'package:flutter_ui/test/view/EditTextView.dart';
 import 'package:flutter_ui/test/FadeAppTest.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         // 注册界面
         HomeScreen.HOME: (BuildContext context) => new HomeScreen(),
+        QRScannerPage.qRScannerPage: (BuildContext context) => new QRScannerPage(),
         TabLayout.TABLAYOUT: (BuildContext context) => new TabLayout(),
         FadeAppTest.FADEAPP: (BuildContext context) =>
         new FadeAppTest(title: 'Fade Demo'),
@@ -117,6 +119,7 @@ class MyAppState extends State<MyAppSample> {
               "http://shp.qpic.cn/ishow/2735041709/1555464892_1186005513_29965_sProdImgNo_7.jpg/0"),
           listItemButton(context, InfiniteListPage.infiniteListPage, "InfiniteList"),
           listItemButton(context, SharedPreferencesPage.sharedPreferencesPage, "SharedPreferences"),
+          listItemButton(context, QRScannerPage.qRScannerPage, "QRScannerPage"),
 //          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(LoginPage.loginPage),
 //            child: new Text("谷歌登录"),),
         ],
