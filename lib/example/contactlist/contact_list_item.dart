@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/test/contactlist/modal/contact.dart';
+import 'package:flutter_ui/example/contactlist/modal/contact.dart';
 
 class ContactListItem extends StatelessWidget {
   final ContactModal _contactModal;

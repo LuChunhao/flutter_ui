@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/test/view/gridview.dart';
+import 'package:flutter_ui/example//view/gridview.dart';
 
 //class MyApp extends StatelessWidget {
 //  final MyGridView myGridView = new MyGridView();

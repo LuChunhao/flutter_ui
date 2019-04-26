@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/test/contactlist/contact_page.dart';
-import 'package:flutter_ui/test/drawer/account.dart';
-import 'package:flutter_ui/test/drawer/home.dart';
-import 'package:flutter_ui/test/drawer/settings.dart';
-import 'package:flutter_ui/test/pages/DropdownButtonPage.dart';
-import 'package:flutter_ui/test/pages/GridLayoutPage.dart';
-import 'package:flutter_ui/test/pages/InfiniteListPage.dart';
-import 'package:flutter_ui/test/pages/LoginPage.dart';
-import 'package:flutter_ui/test/pages/QRScannerPage.dart';
-import 'package:flutter_ui/test/pages/SharedPreferencesPage.dart';
-import 'package:flutter_ui/test/view/EditTextView.dart';
-import 'package:flutter_ui/test/FadeAppTest.dart';
-import 'package:flutter_ui/test/HttpGet.dart';
-import 'package:flutter_ui/test/LoadJson.dart';
-import 'package:flutter_ui/test/MyApp.dart';
-import 'package:flutter_ui/test/PaintDemo.dart';
+import 'package:flutter_ui/example//contactlist/contact_page.dart';
+import 'package:flutter_ui/example/drawer/account.dart';
+import 'package:flutter_ui/example/drawer/home.dart';
+import 'package:flutter_ui/example/drawer/settings.dart';
+import 'package:flutter_ui/example/pages/DropdownButtonPage.dart';
+import 'package:flutter_ui/example/pages/GridLayoutPage.dart';
+import 'package:flutter_ui/example/pages/InfiniteListPage.dart';
+import 'package:flutter_ui/example/pages/LoginPage.dart';
+import 'package:flutter_ui/example/pages/QRScannerPage.dart';
+import 'package:flutter_ui/example/pages/SharedPreferencesPage.dart';
+import 'package:flutter_ui/example/pages/bannerPage.dart';
+import 'package:flutter_ui/example/view/EditTextView.dart';
+import 'package:flutter_ui/example/FadeAppTest.dart';
+import 'package:flutter_ui/example/HttpGet.dart';
+import 'package:flutter_ui/example/LoadJson.dart';
+import 'package:flutter_ui/example/MyApp.dart';
+import 'package:flutter_ui/example/PaintDemo.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_ui/test/RowColumnTest.dart';
-import 'package:flutter_ui/test/StatelessWidgets.dart';
-import 'package:flutter_ui/test/StepperDemo.dart';
-import 'package:flutter_ui/test/view/SnackBarView.dart';
-import 'package:flutter_ui/test/view/tablayout.dart';
+import 'package:flutter_ui/example/RowColumnTest.dart';
+import 'package:flutter_ui/example/StatelessWidgets.dart';
+import 'package:flutter_ui/example/StepperDemo.dart';
+import 'package:flutter_ui/example/view/SnackBarView.dart';
+import 'package:flutter_ui/example/view/tablayout.dart';
 import 'package:flutter_ui/utils/textUtil.dart' as utils;
 import './utils/textUtil.dart' as textUtil;
 import 'package:flutter_ui/utils/commonUtil.dart' as commonUtil;
@@ -69,6 +70,8 @@ class MyApp extends StatelessWidget {
 //        LoginPage.loginPage: (BuildContext context) => new LoginPage(),
         SharedPreferencesPage.sharedPreferencesPage: (
             BuildContext context) => new SharedPreferencesPage(),
+        BannerPage.bannerPage: (
+            BuildContext context) => new BannerPage(),
 
       },
     );
@@ -113,13 +116,10 @@ class MyAppState extends State<MyAppSample> {
           listItemButton(context, SnackBarView.snackBarView, "showSnackBar"),
           listItemButton(context, GridLayoutPage.gridLayoutPage, "Grid View"),
           listItemButton(context, DropdownButtonPage.dropdownButton, "DropdownButton"),
-          new Image.network(
-              "http://shp.qpic.cn/ishow/2735041709/1555463886_-695593207_22439_sProdImgNo_7.jpg/0"),
-          new Image.network(
-              "http://shp.qpic.cn/ishow/2735041709/1555464892_1186005513_29965_sProdImgNo_7.jpg/0"),
           listItemButton(context, InfiniteListPage.infiniteListPage, "InfiniteList"),
           listItemButton(context, SharedPreferencesPage.sharedPreferencesPage, "SharedPreferences"),
           listItemButton(context, QRScannerPage.qRScannerPage, "QRScannerPage"),
+          listItemButton(context, BannerPage.bannerPage, "BannerView"),
 //          new RaisedButton(onPressed: () => Navigator.of(context).pushNamed(LoginPage.loginPage),
 //            child: new Text("谷歌登录"),),
         ],

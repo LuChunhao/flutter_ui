@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/test/tabs/first.dart';
-import 'package:flutter_ui/test/tabs/second.dart';
-import 'package:flutter_ui/test/tabs/third.dart';
+import 'package:flutter_ui/example//tabs/first.dart';
+import 'package:flutter_ui/example/tabs/second.dart';
+import 'package:flutter_ui/example/tabs/third.dart';
 import 'package:flutter_ui/utils/textUtil.dart' as textUtil;
 
 

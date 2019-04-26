@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/test/drawer/account.dart';
-import 'package:flutter_ui/test/drawer/settings.dart';
+import 'package:flutter_ui/example/drawer/account.dart';
+import 'package:flutter_ui/example/drawer/settings.dart';
 
 class Home extends StatelessWidget {
   @override
